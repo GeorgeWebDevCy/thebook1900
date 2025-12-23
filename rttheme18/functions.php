@@ -48,9 +48,12 @@ if ( ! isset( $content_width ) ){
 # 
 if ( ! function_exists("load_rttheme") ){
 	function load_rttheme(){
-		if(rt_check_WP_version()){
+		$load_msg = rt_check_WP_version();
+		if($load_msg){
 			if(is_admin()){
-				add_action( 'admin_notices', $c = create_function( '', 'echo "' . addcslashes( $load_msg, '"' ) . '";' ) );
+				add_action('admin_notices', function() use ($load_msg) {
+					echo $load_msg;
+				});
 			}
 			else{
 				exit($load_msg);

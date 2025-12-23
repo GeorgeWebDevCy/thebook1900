@@ -900,7 +900,9 @@ class RTThemePageLayouts extends RTThemeAdmin{
 		}
 
 		// seems something wrong with the data - try to fix
-		$data = preg_replace_callback('/s:(\d+):"(.*?)";/s',create_function('$matches','return "s:".strlen($matches[2]).":\"".( $matches[2] )."\";";'), $data );
+		$data = preg_replace_callback('/s:(\d+):"(.*?)";/s', function($matches) {
+			return 's:' . strlen($matches[2]) . ':"' . $matches[2] . '";';
+		}, $data);
 		$data = @unserialize( $data ); 
  
 		if( $data === false ){	
@@ -928,7 +930,9 @@ class RTThemePageLayouts extends RTThemeAdmin{
 		}
 
 		// seems something wrong with the data - try to fix
-		$data = preg_replace_callback('/s:(\d+):"(.*?)";/s',create_function('$matches','return "s:".strlen($matches[2]).":\"".( $matches[2] )."\";";'), $data );
+		$data = preg_replace_callback('/s:(\d+):"(.*?)";/s', function($matches) {
+			return 's:' . strlen($matches[2]) . ':"' . $matches[2] . '";';
+		}, $data);
 		$data = @unserialize( $data ); 
  
 		if( $data === false  ){	
