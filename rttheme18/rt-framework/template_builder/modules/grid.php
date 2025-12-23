@@ -27,8 +27,8 @@ class rt_generate_grid_class extends RTThemePageLayoutOptions{
 			$breadcrumb             = isset( $options['breadcrumb'] )  || ( isset( $options['breadcrumb'] ) && empty( $options['breadcrumb'] ) ) ? $options['breadcrumb'] : 1 ;    
 			$page_title             = isset( $options['page_title'] ) ? $options['page_title'] : "" ;   
 			$display_widgets        = isset( $options['display_widgets'] ) ? $options['display_widgets'] : "" ;   
-			$header_purpose         = isset( $options['header_purpose'] ) ? $options['header_purpose'] == true || $options['header_purpose'] == "1" ? true : false : false; 			
-			$footer_purpose         = isset( $options['footer_purpose'] ) ? $options['footer_purpose'] == true || $options['footer_purpose'] == "1" ? true : false : false; 			
+			$header_purpose         = isset( $options['header_purpose'] ) && ( $options['header_purpose'] == true || $options['header_purpose'] == "1" ); 			
+			$footer_purpose         = isset( $options['footer_purpose'] ) && ( $options['footer_purpose'] == true || $options['footer_purpose'] == "1" ); 			
 			$div_header_class       = isset ( $header_options ) && $header_options == "new" ? 'header_background_options active' : "header_background_options";
 			$div_row_class          = isset ( $background_options ) && $background_options == "new" ? 'header_background_options active' : "header_background_options";
 			$sidebar_selector_class = $isNewBox || $sidebar_selection=="full" ? 'sidebar_selection_list' : "sidebar_selection_list active";

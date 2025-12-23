@@ -1535,7 +1535,7 @@ if( ! function_exists("rt_get_image_data") ){
 		$save_post = $post;
 		
 		//find post id from src 
-		$image_id = ! empty( $image_id ) ? $image_id : isset($image_url) ? rt_get_attachment_id_from_src($image_url) : ""; 		
+		$image_id = ! empty( $image_id ) ? $image_id : ( isset( $image_url ) ? rt_get_attachment_id_from_src( $image_url ) : "" ); 		
 		
 		//get the post attachment
 		$attachment = ! empty ( $image_id ) ? get_post( rt_wpml_translated_attachment_id($image_id) ) : false ;	
@@ -1711,7 +1711,7 @@ if( ! function_exists("rt_get_global_post_values") ){
 
 		// gallery images
 		$rt_gallery_images = get_post_meta( $post->ID, RT_COMMON_THEMESLUG . "rt_gallery_images", true ); 
-		$rt_gallery_images = ! empty( $rt_gallery_images ) ? ! is_array( $rt_gallery_images ) ? explode(",", $rt_gallery_images) : $rt_gallery_images : array(); //turn into an array
+		$rt_gallery_images = ! empty( $rt_gallery_images ) ? ( ! is_array( $rt_gallery_images ) ? explode(",", $rt_gallery_images) : $rt_gallery_images ) : array(); //turn into an array
 
 		//create global values array
 		$rt_global_post_values = array(

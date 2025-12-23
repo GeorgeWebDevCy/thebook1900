@@ -13,7 +13,7 @@ global $rt_sidebar_location;
 
 		// featured images
 		$rt_gallery_images     = get_post_meta( $post->ID, RT_COMMON_THEMESLUG . "rt_gallery_images", true ); 
-		$rt_gallery_images     = ! empty( $rt_gallery_images ) ? ! is_array( $rt_gallery_images ) ? explode(",", $rt_gallery_images) : $rt_gallery_images : array(); //turn into an array
+		$rt_gallery_images     = ! empty( $rt_gallery_images ) ? ( ! is_array( $rt_gallery_images ) ? explode(",", $rt_gallery_images) : $rt_gallery_images ) : array(); //turn into an array
 		$rt_gallery_images	   = rt_merge_featured_images( $rt_gallery_images ); //add the wp featured image to the array
 
 		//values 
