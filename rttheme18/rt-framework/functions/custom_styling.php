@@ -1547,7 +1547,7 @@ function rt_create_background_css( $background_options = array(), $container = "
 
 					.mobile_device %6$s{   
 						background-attachment: scroll;   
-						/* sprintf format string: escape % as %% */
+						/* sprintf format string: escape percent signs */
 						-webkit-background-size: auto 100%%;
 						-moz-background-size: auto;
 						-o-background-size: auto;			 	
